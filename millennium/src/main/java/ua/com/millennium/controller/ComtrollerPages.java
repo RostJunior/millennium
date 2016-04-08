@@ -108,6 +108,21 @@ public class ComtrollerPages {
 
 		return "client/pizzaAll";
 	}
+	
+	@RequestMapping(value = "/drinkAll")
+	public String drinkAllPage(ModelMap model) {
+		List<Product> products = productService.getAllProduct();
+		List<Product> drinkList = new ArrayList<Product>();
+		for (Product product : products) {
+			if (product.getType().getName().equalsIgnoreCase("drink")) {
+				drinkList.add(product);
+			}
+		}
+
+		model.addAttribute("allDrink", drinkList);
+
+		return "client/drinkAll";
+	}
 
 	@RequestMapping(value = "pizzaAll/{pizzaId}", method = RequestMethod.POST)
 	public String addPizza(@PathVariable String pizzaId, @RequestParam(value = "count") String countPizza,

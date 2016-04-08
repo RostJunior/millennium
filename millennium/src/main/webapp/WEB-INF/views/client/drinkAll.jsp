@@ -14,7 +14,7 @@
 	
 	<link href="<c:url value="https://fonts.googleapis.com/css?family=Playfair+Display:900italic"/>" rel='stylesheet' type='text/css'>
 
-<title>Beverages</title>
+<title>Pizza</title>
 </head>
 <body>
 		<header>
@@ -39,34 +39,34 @@
 			
 			</div>
 			
-			<c:forEach items="${allPizza}" var="pizza">
-				<form action="pizzaAll/${pizza.id}" method="POST" enctype = "multipart/form-data" >
+			<c:forEach items="${allDrink}" var="drink">
+				<form action="pizzaAll/${drink.id}" method="POST" enctype = "multipart/form-data" >
 					<div class="menu-pizza">
 		
 				<div class="photo-pizza">
 					<a href="#">
-						<img width="300" height="300" border="0" src="<c:url value="resources/img/${pizza.namePhoto}"/>" alt="${pizza.namePhoto}" title="${pizza.namePhoto}"/>
+						<img width="300" height="300" border="0" src="<c:url value="resources/img/${drink.namePhoto}"/>" alt="${drink.namePhoto}" title="${drink.namePhoto}"/>
 					</a>	
 				</div>
 						
 				<div class="title-pizza">
-					<h1>${pizza.name}</h1>
+					<h1>${drink.name}</h1>
 					<hr/>
 				</div>
 		
 				<div class="describe-pizza">
 					<h3>COMPOSITION:</h3>
-					<p>${pizza.describe}</p>
+					<p>${drink.describe}</p>
 				</div>
 		
 		
 				<div class="order-pizza">
 					<div class="size">
-						<h3>${pizza.standart}</h3>
+						<h3>${drink.standart}</h3>
 					</div>
 					
 						<div class="price">
-							<h4>${pizza.price}.00 UAH</h4>
+							<h4>${drink.price}.00 UAH</h4>
 						</div>
 					
 					<div class="number">
